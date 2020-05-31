@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Pending Orders</h1>
+
+<p>This component demonstrates fetching data from the server using Entity Framework.</p>
+
+<p *ngIf="!orders"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="orders">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Item</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.orderId }}</td>
+      <td>{{ order.name }}</td>
+      <td>{{ order.item }}</td>
+      <td>{{ order.quantity }}</td>
+    </tr>
+  </tbody>
+</table>
